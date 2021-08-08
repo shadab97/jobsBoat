@@ -7,7 +7,7 @@ import HomePage from "./pages/Home/HomePage";
 import Login from "./pages/Login/Login";
 import PostJob from "./pages/PostJob/PostJob";
 import SignUp from "./pages/Signup/SignUp";
-
+import PrivateRoute from "./PrivateRoute";
 
 const Routes = () => {
   const history = useHistory();
@@ -16,8 +16,8 @@ const Routes = () => {
       <Route path="/" exact component={HomePage} />
       <Route path="/login" exact component={Login} />
       <Route path="/signup" exact component={SignUp} />
-      <Route path="/dashboard" exact component={isLogedIn() ? Dashboard : history.push('/login')} />
-      <Route path="/postjob" exact component={isLogedIn() ? PostJob : history.push('/login')} />
+      <PrivateRoute path="/dashboard" exact component={Dashboard} />
+      <PrivateRoute path="/postjob" exact component={PostJob} />
     </Switch>
   );
 };

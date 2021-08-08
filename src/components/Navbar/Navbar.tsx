@@ -13,7 +13,9 @@ function Navbar({ isLogin }: props) {
     return (
         <div className="mx-5 custom-border-bottom align-items-center py-2 d-flex justify-content-between">
             <h3 className="text-white" onClick={() => {
-                history.push('/dashboard')
+
+                !isLogedIn() ? history.push('/') : history.push('/dashboard')
+
             }}>My<span className="brand-color">Jobs</span></h3>
             {
                 isLogedIn() ? (
@@ -35,7 +37,7 @@ function Navbar({ isLogin }: props) {
                                         <div className="pointer"
                                             onClick={() => {
                                                 localStorage.clear();
-                                                history.push('/login')
+                                                history.push('/')
                                             }}
                                             style={{
                                                 position: "absolute",
@@ -51,9 +53,7 @@ function Navbar({ isLogin }: props) {
                                     )
                                 }
                             </div>
-
                         </div>
-
                     </div>
                 ) : (<div className="btn-sm btn btn-login" onClick={() => history.push('/login')}>Login / Signup</div>)
             }

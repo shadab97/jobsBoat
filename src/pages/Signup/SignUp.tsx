@@ -74,7 +74,6 @@ function SignUp() {
                 setResError(1)
                 setResMessage(res?.message)
             }
-
         }
     }
     return (

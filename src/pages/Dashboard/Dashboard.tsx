@@ -42,15 +42,12 @@ function Dashboard() {
                 <h6 className="text-white">Home</h6>
                 <div className="container mt-5 text-white">
                     <h5>Jobs posted by you</h5>
-
                     <div className="row  d-flex flex-wrap align-items-center d-flex">
                         {
                             alljobs?.map((job, i) => (
-                                <div
-                                    style={{
-                                        height: "150px"
-                                    }}
-
+                                <div style={{
+                                    height: "150px"
+                                }}
                                     key={i} className={`col-md-3 bg-white text-color box  m-1 p-2  box-shadow`}>
                                     <h5>{job?.title}</h5>
                                     <p className="small my-1">{job?.description.slice(0, 50)}...</p>
@@ -90,50 +87,50 @@ function Dashboard() {
                                                 <p>Total {singleJobData?.length} applications</p>
                                             )
                                         }
-                                        <div className="row container">
-                                            {
-                                                singleJobData?.map((data) => (
-                                                    <div style={{
-                                                        height: "150px"
+                                        <div className="container">
+                                            <div className="row">
+                                                {
+                                                    singleJobData?.map((data) => (
+                                                        <div style={{
+                                                            height: "150px"
 
-                                                    }} className="col-md-3 card p-3 m-2">
-                                                        <div className="info  d-flex justify-content-between">
-                                                            <div style={{
-                                                                display: "flex",
-                                                                justifyContent: "center",
-                                                                alignItems: "center",
-                                                                width: "40px",
-                                                                height: "40px",
-                                                                textTransform: "uppercase",
-                                                                borderRadius: "100%",
-                                                                backgroundColor: "#D9EFFF"
-                                                            }}>
-                                                                {data.name[0]}
+                                                        }} className="col-md-3 card p-3 m-2">
+                                                            <div className="info  d-flex justify-content-between">
+                                                                <div style={{
+                                                                    display: "flex",
+                                                                    justifyContent: "center",
+                                                                    alignItems: "center",
+                                                                    width: "40px",
+                                                                    height: "40px",
+                                                                    textTransform: "uppercase",
+                                                                    borderRadius: "100%",
+                                                                    backgroundColor: "#D9EFFF"
+                                                                }}>
+                                                                    {data.name[0]}
+                                                                </div>
+                                                                <div>
+                                                                    <h6 className="my-0 text-uppercase">{data.name}</h6>
+                                                                    <p>{data.email}</p>
+                                                                </div>
                                                             </div>
                                                             <div>
-                                                                <h6 className="my-0 text-uppercase">{data.name}</h6>
-                                                                <p>{data.email}</p>
+                                                                <p className="m-0 ">Skills</p>
+                                                                <div className="ml-0 d-flex d-wrap">
+                                                                    {
+                                                                        data.skills.split(",").map((e) => (
+                                                                            <span className=" small p-1 mx-1 brand-bg rounded-2 text-white">
+                                                                                {e}
+                                                                            </span>
+                                                                        ))
+                                                                    }
+                                                                </div>
                                                             </div>
-                                                        </div>
-                                                        <div>
-                                                            <p className="m-0 ">Skills</p>
-                                                            <div className="ml-0 d-flex d-wrap">
-                                                                {
-                                                                    data.skills.split(",").map((e) => (
-                                                                        <span className=" small p-1 mx-1 brand-bg rounded-2 text-white">
-                                                                            {e}
-                                                                        </span>
-                                                                    ))
-                                                                }
-                                                            </div>
-                                                        </div>
 
-                                                    </div>
-                                                ))
-                                            }
+                                                        </div>
+                                                    ))
+                                                }
+                                            </div>
                                         </div>
-
-
                                     </div>
                                 </div>
                             </div>
