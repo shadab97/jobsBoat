@@ -12,7 +12,6 @@ function Login() {
     const [passwordError, setPasswordError] = useState<Number>(-1);
 
     const handleLogin = async () => {
-        console.log("login")
         if (email.trim() === "") {
             setEmailError(1)
             return false
@@ -28,10 +27,8 @@ function Login() {
                 localStorage.setItem("userData", JSON.stringify(res))
                 history.push('/dashboard');
                 window.location.reload();
-                console.log("home pge")
             }
             else if (res?.code === 401) {
-                console.log("email not vailid", res)
                 setEmailError(1);
                 setPasswordError(1)
             }

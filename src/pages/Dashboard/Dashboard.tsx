@@ -24,7 +24,6 @@ function Dashboard() {
 
     const getSingleJob = async () => {
         let res = await getSingleJobData(jobId, JSON.parse(localStorage.getItem("userData") || "")?.data?.token)
-        console.log("singe job", res)
         setSingleJobData(res?.data)
     }
 
@@ -85,15 +84,13 @@ function Dashboard() {
                                             <span aria-hidden="true">&times;</span>
                                         </button>
                                     </div>
-                                    <div className="modal-body bg-light">
+                                    <div className="modal-body bg-light text-color">
                                         {
-                                            singleJobData?.length < 0 ? (<p>No Applicant</p>
-                                            ) : (
-                                                <p>Total {singleJobData?.length}  applications</p>
+                                            !singleJobData ? (<p>No Applicant</p>) : (
+                                                <p>Total {singleJobData?.length} applications</p>
                                             )
                                         }
-
-                                        <div className="row">
+                                        <div className="row container">
                                             {
                                                 singleJobData?.map((data) => (
                                                     <div style={{

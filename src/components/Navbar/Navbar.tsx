@@ -18,7 +18,7 @@ function Navbar({ isLogin }: props) {
             {
                 isLogedIn() ? (
                     <div className="d-flex justify-content-between">
-                        <p className="m-2 pointer" onClick={() => history.push('/postjob')}>Post A job</p>
+                        <p className="m-2 pointer brand-color" onClick={() => history.push('/postjob')}>Post A job</p>
                         <div onClick={() => { setLogoutBox(!logOutbox) }}
                             className="m-2 bg-light text-dark d-flex justify-content-center align-items-center" style={{
                                 width: "30px",

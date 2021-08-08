@@ -23,7 +23,7 @@ function PostJob() {
 
 
     const handleSignup = async () => {
-        console.log("POSt")
+
         if (postJobData.title.trim() === "" || postJobData.title.trim().length < 3) {
             setTitleError(1)
             return false
@@ -38,7 +38,7 @@ function PostJob() {
         }
         else {
             let res = await createAJob(JSON.parse(localStorage.getItem("userData") || "")?.data?.token, postJobData)
-            console.log(res)
+
             if (res?.code === 422) {
 
             }

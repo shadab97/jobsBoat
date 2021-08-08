@@ -36,7 +36,7 @@ function SignUp() {
 
     const emailRe = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
     const handleSignup = async () => {
-        console.log("login")
+
         if (user.userRole === -1) {
             setSetSlectedError(1);
             return false
@@ -62,19 +62,12 @@ function SignUp() {
             return false
         }
         else {
-            console.log("as",)
             let res = await makesignup(user)
             if (res?.code === 422) {
-                console.log("res,", res?.errors[0]?.name)
-                // go to home page
-                // history.push('/dashboard');
-                // window.location.reload();
                 setResError(1)
                 setResMessage(res?.message || res?.errors[0]?.name)
             }
             if (res?.code === 201) {
-                console.log("res,", res)
-                // go to home page
                 localStorage.setItem("userData", JSON.stringify(res))
                 history.push('/dashboard');
                 window.location.reload();
@@ -187,8 +180,8 @@ function SignUp() {
                     </p>
 
                     <div className="text-center">
-                        <p onClick={() => history.push('/signup')} className="small" >New to MyJobs? <span className="brand-color pointer">
-                            Create an account
+                        <p onClick={() => history.push('/login')} className="small" >Have an account? <span className="brand-color pointer">
+                            login
                         </span> </p>
                     </div>
 
