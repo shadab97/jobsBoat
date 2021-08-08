@@ -1,38 +1,79 @@
-.App {
-  text-align: center;
+.Header {
+  height: 50vh;
+  background-color: #303f60;
+}
+.Main {
+  background-color: #edf6ff;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* colors */
+.brand-color {
+  color: #43afff;
+}
+.brand-bg {
+  background-color: #43afff;
+}
+.bg-color {
+  background-color: #303f60;
+}
+.text-color {
+  color: #303f60;
+}
+.bg-dim {
+  background-color: #43afff33;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.Header h3 {
+  font-size: 22px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+/* buttons */
+.btn-login {
+  background-color: #43afff33;
+  border: 1px solid #43afff;
   color: white;
+  font-weight: bold;
+}
+.btn-action {
+  background-color: #43afff;
+  color: white;
+  font-weight: bold;
+  width: fit-content;
 }
 
-.App-link {
-  color: #61dafb;
+/* borders */
+.custom-border-bottom {
+  border-bottom: 1px solid rgba(211, 211, 211, 0.487);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.hero-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 1rem;
+}
+
+.box {
+  max-height: 280px;
+}
+
+/* uitlities */
+/* heading */
+.heading-sm {
+  font-weight: bold;
+  font-size: 22px;
+  color: #303f60;
+}
+
+.bold {
+  font-weight: bold;
+  /* font-size: px; */
+}
+
+.box-shadow {
+  box-shadow: 0px 3px 6px #557da526;
+  border-radius: 5px;
+}
+
+.pointer {
+  cursor: pointer;
 }
