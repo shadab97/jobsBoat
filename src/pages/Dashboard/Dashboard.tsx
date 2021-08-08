@@ -41,16 +41,18 @@ function Dashboard() {
         <React.Fragment>
             <div className="container mt-3">
                 <h6 className="text-white">Home</h6>
-                <div className="mt-5 text-white">
+                <div className="container mt-5 text-white">
                     <h5>Jobs posted by you</h5>
 
-                    <div className="d-flex flex-wrap align-items-center d-flex">
+                    <div className="row  d-flex flex-wrap align-items-center d-flex">
                         {
                             alljobs?.map((job, i) => (
                                 <div
-                                    key={i} className={`bg-white text-color w-25 box  m-1 p-2  box-shadow`} style={{
+                                    style={{
                                         height: "150px"
-                                    }}>
+                                    }}
+
+                                    key={i} className={`col-md-3 bg-white text-color box  m-1 p-2  box-shadow`}>
                                     <h5>{job?.title}</h5>
                                     <p className="small my-1">{job?.description.slice(0, 50)}...</p>
                                     <div className="mt-1 d-flex align-items-center  d-flex justify-content-between">
@@ -94,7 +96,10 @@ function Dashboard() {
                                         <div className="row">
                                             {
                                                 singleJobData?.map((data) => (
-                                                    <div className="col-md-4 card p-3 m-2">
+                                                    <div style={{
+                                                        height: "150px"
+
+                                                    }} className="col-md-3 card p-3 m-2">
                                                         <div className="info  d-flex justify-content-between">
                                                             <div style={{
                                                                 display: "flex",

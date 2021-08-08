@@ -1,7 +1,7 @@
 
 
 
-const base_url = 'https://jobs-api.squareboat.info/api/v1/'
+const base_url = process.env.REACT_APP_BASE_URL
 
 export const makelogin = (email, password) => {
     return fetch(`${base_url}auth/login`, {
