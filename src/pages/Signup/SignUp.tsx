@@ -65,13 +65,12 @@ function SignUp() {
             console.log("as",)
             let res = await makesignup(user)
             if (res?.code === 422) {
-                console.log("res,", res)
+                console.log("res,", res?.errors[0]?.name)
                 // go to home page
                 // history.push('/dashboard');
                 // window.location.reload();
                 setResError(1)
-                setResMessage(res?.message)
-
+                setResMessage(res?.message || res?.errors[0]?.name)
             }
             if (res?.code === 201) {
                 console.log("res,", res)
@@ -165,14 +164,14 @@ function SignUp() {
 
                         <div className="form-group my-2">
                             <label className="text-color" htmlFor="skills">Skills</label>
-                            <input type="text" className={`${skillsError === 1 && "border-danger"} form-control form-control-sm`} id="skills" placeholder="Enter password"
+                            <input type="text" className={`${skillsError === 1 && "border-danger"} form-control form-control-sm`} id="skills" placeholder="Enter skills"
                                 onChange={(e) => {
                                     let val = e.target.value;
                                     setUser({ ...user, skills: val });
                                     setskillsError(-1)
                                 }}
                             />
-                            {skillsError === 1 && (<label className="text-danger small" htmlFor="skills">Enter Password</label>)}
+                            {skillsError === 1 && (<label className="text-danger small" htmlFor="skills">Enter Skills</label>)}
 
                         </div>
 

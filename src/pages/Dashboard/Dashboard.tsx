@@ -112,8 +112,6 @@ function Dashboard() {
                                                                 <h6 className="my-0 text-uppercase">{data.name}</h6>
                                                                 <p>{data.email}</p>
                                                             </div>
-
-
                                                         </div>
                                                         <div>
                                                             <p className="m-0 ">Skills</p>
